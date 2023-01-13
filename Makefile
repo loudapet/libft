@@ -6,7 +6,7 @@
 #    By: plouda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/30 21:37:24 by nfujii            #+#    #+#              #
-#    Updated: 2023/01/11 17:18:47 by plouda           ###   ########.fr        #
+#    Updated: 2023/01/13 10:20:09 by plouda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRC = ft_isalnum.c \
 		ft_strlcat.c \
 		ft_toupper.c \
 		ft_tolower.c \
+		ft_strchr.c \
+		ft_strrchr.c \
 		main.c
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror

@@ -6,12 +6,13 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:32:17 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/11 17:28:13 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/13 11:02:24 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "libft.h"
 
 int	main(void)
@@ -231,7 +232,7 @@ int	main(void)
 	if (ft_strlcpy(dest, "1", 0) == 1 && dest[0] == 0)
 		printf("Test 9 correct\n");
 	else
-		printf("Test 9 incorrect\n");
+		printf("Test 9 incorrect - TAGGED\n");
 	memset(dest, 'A', 10);
 
 	// ft_strlcat
@@ -364,6 +365,76 @@ int	main(void)
 	else
 		printf("Test 7 incorrect\n");
 	if (ft_toupper('z') == 'Z')
+		printf("Test 8 correct\n");
+	else
+		printf("Test 8 incorrect\n");
+
+	// ft_strchr
+	printf("———————————————————\n");
+	printf("Test J: ft_strchr\n");
+	printf("———————————————————\n");
+	char	s1[] = "tripouille";
+	if (ft_strchr(s1, 't') == s1)
+		printf("Test 1 correct\n");
+	else
+		printf("Test 1 incorrect\n");
+	if (ft_strchr(s1, 'l') == s1 + 7)
+		printf("Test 2 correct\n");
+	else
+		printf("Test 2 incorrect\n");
+	if (ft_strchr(s1, 'z') == 0)
+		printf("Test 3 correct\n");
+	else
+		printf("Test 3 incorrect\n");
+	if (ft_strchr(s1, 0) == s1 + strlen(s1))
+		printf("Test 4 correct\n");
+	else
+		printf("Test 4 incorrect\n");
+	// shouldn't this test equal to 0?
+	if (ft_strchr(s1, 't' + 256) == s1)
+		printf("Test 5 correct\n");
+	else
+		printf("Test 5 incorrect - TAGGED\n");
+
+	// ft_strchr
+	printf("———————————————————\n");
+	printf("Test K: ft_strrchr\n");
+	printf("———————————————————\n");
+	char s2[] = "tripouille";
+	char s3[] = "ltripouiel";
+	char s4[] = "";
+	if (ft_strrchr(s2, 't') == s2)
+		printf("Test 1 correct\n");
+	else
+		printf("Test 1 incorrect\n");
+	if (ft_strrchr(s2, 'l') == s2 + 8)
+		printf("Test 2 correct\n");
+	else
+		printf("Test 2 incorrect\n");
+	if (ft_strrchr(s3, 'l') == s3 + 9)
+		printf("Test 3 correct\n");
+	else
+		printf("Test 3 incorrect\n");
+	if (ft_strrchr(s2, 'z') == 0)
+		printf("Test 4 correct\n");
+	else
+		printf("Test 4 incorrect\n");
+	if (ft_strrchr(s2, 0) == s2 + strlen(s2))
+		printf("Test 5 correct\n");
+	else
+		printf("Test 5 incorrect\n");
+	// shouldn't this test equal to 0?
+	if (ft_strrchr(s2, 't' + 256) == s2)
+		printf("Test 6 correct\n");
+	else
+		printf("Test 6 incorrect - TAGGED\n");
+	char * empty = (char*)calloc(1, 1);
+	if (ft_strrchr(empty, 'V') == 0)
+		printf("Test 7 correct\n");
+	else
+		printf("Test 7 incorrect\n");
+	free(empty);
+	if (ft_strrchr(s4, 0) == s4)
 		printf("Test 8 correct\n");
 	else
 		printf("Test 8 incorrect\n");

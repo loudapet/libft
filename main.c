@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:32:17 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/13 11:44:05 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/13 13:30:25 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -507,6 +507,74 @@ int	main(void)
 		printf("Test 16 correct\n");
 	else
 		printf("Test 16 incorrect\n");
+
+	// ft_strnstr
+	printf("———————————————————\n");
+	printf("Test M: ft_strnstr\n");
+	printf("———————————————————\n");
+	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
+	char * empty1 = (char*)"";
+	if (ft_strnstr(haystack, needle, 0) == 0)
+		printf("Test 1 correct\n");
+	else
+		printf("Test 1 incorrect\n");
+	if (ft_strnstr(haystack, needle, -1) == haystack + 1)
+		printf("Test 2 correct\n");
+	else
+		printf("Test 2 incorrect\n");
+	if (ft_strnstr(haystack, "a", -1) == haystack)
+		printf("Test 3 correct\n");
+	else
+		printf("Test 3 incorrect\n");
+	if (ft_strnstr(haystack, "c", -1) == haystack + 4)
+		printf("Test 4 correct\n");
+	else
+		printf("Test 4 incorrect\n");
+	if (ft_strnstr(empty1, "", -1) == empty1)
+		printf("Test 5 correct\n");
+	else
+		printf("Test 5 incorrect\n");
+	if (ft_strnstr(empty1, "", 0) == empty1)
+		printf("Test 6 correct\n");
+	else
+		printf("Test 6 incorrect\n");
+	if (ft_strnstr(empty1, "coucou", -1) == 0)
+		printf("Test 7 correct\n");
+	else
+		printf("Test 7 incorrect\n");
+	if (ft_strnstr(haystack, "aaabc", 5) == haystack)
+		printf("Test 8 correct\n");
+	else
+		printf("Test 8 incorrect\n");
+	if (ft_strnstr(empty1, "12345", 5) == 0)
+		printf("Test 9 correct\n");
+	else
+		printf("Test 9 incorrect\n");
+	if (ft_strnstr(haystack, "abcd", 9) == haystack + 5)
+		printf("Test 10 correct\n");
+	else
+		printf("Test 10 incorrect\n");
+	if (ft_strnstr(haystack, "cd", 8) == 0)
+		printf("Test 11 correct\n");
+	else
+		printf("Test 11 incorrect\n");
+	if (ft_strnstr(haystack, "a", 1) == haystack)
+		printf("Test 12 correct\n");
+	else
+		printf("Test 12 incorrect\n");
+	if (ft_strnstr("1", "a", 1) == NULL)
+		printf("Test 13 correct\n");
+	else
+		printf("Test 13 incorrect\n");
+	if (ft_strnstr("22", "b", 2) == NULL)
+		printf("Test 14 correct\n");
+	else
+		printf("Test 14 incorrect\n");
+	if (ft_strnstr(haystack, "aab", 3) == haystack + 1)
+		printf("Test 15 correct\n");
+	else
+		printf("Test 15 incorrect\n");
 
 	return (0);
 }

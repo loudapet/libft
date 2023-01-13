@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: plouda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/30 21:37:24 by nfujii            #+#    #+#              #
-#    Updated: 2023/01/13 11:07:10 by plouda           ###   ########.fr        #
+#    Created: 2023/01/13 12:01:13 by plouda            #+#    #+#              #
+#    Updated: 2023/01/13 12:01:15 by plouda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC = ft_isalnum.c \
 		ft_strchr.c \
 		ft_strrchr.c \
 		ft_strncmp.c \
+		ft_strnstr.c \
 		main.c
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror

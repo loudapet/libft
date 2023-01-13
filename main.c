@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:32:17 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/13 15:12:38 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/13 15:23:07 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -673,6 +673,35 @@ int	main(void)
 		printf("Test 2 correct\n");
 	else
 		printf("Test 2 incorrect\n");
+
+	// ft_bzero
+	printf("———————————————————\n");
+	printf("ft_bzero\n");
+	printf("———————————————————\n");
+	char tab2[100];
+	memset(tab2, 'A', 100);
+	ft_bzero(tab2, 0);
+	if (tab2[0] == 'A')
+		printf("Test 1 correct\n");
+	else
+		printf("Test 1 incorrect\n");
+	ft_bzero(tab2, 42);
+	i = 0;
+	while (i < 100 && tab2[i] == 0)
+		i++;
+	if (i == 42 && tab2[42] == 'A')
+		printf("Test 2 correct\n");
+	else
+		printf("Test 2 incorrect\n");
+	memset(tab2, 'A', 100); tab2[0] = 0;
+	ft_bzero(tab2, 42);
+	i = 0;
+	while (i < 100 && tab2[i] == 0)
+		i++;
+	if (i == 42)
+		printf("Test 3 correct\n");
+	else
+		printf("Test 3 incorrect\n");
 
 	return (0);
 }

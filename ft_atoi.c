@@ -6,13 +6,11 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 13:55:57 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/13 14:45:26 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/13 14:49:39 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	unsigned int	i;
 	unsigned int	flag;

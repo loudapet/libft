@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:32:17 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/13 15:23:07 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/13 15:58:08 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -702,6 +702,34 @@ int	main(void)
 		printf("Test 3 correct\n");
 	else
 		printf("Test 3 incorrect\n");
+
+	// ft_memcpy
+	printf("———————————————————\n");
+	printf("ft_memcpy\n");
+	printf("———————————————————\n");
+	char dest3[100];
+	memset(dest3, 'A', 100);
+	ft_memcpy(dest3, "coucou", 0);
+	if (dest3[0] == 'A')
+		printf("Test 1 correct\n");
+	else
+		printf("Test 1 incorrect\n");
+	char *rtn = (char *)ft_memcpy(dest3, NULL, 0);
+	if (rtn == dest3 && dest3[0] == 'A')
+		printf("Test 2 correct\n");
+	else
+		printf("Test 2 incorrect\n");
+	char src3[] = {0, 0};
+	ft_memcpy(dest3, src3, 2);
+	i = 0;
+	while (i < 100 && dest3[i] == 0)
+		i++;
+	if (i == 2 && dest3[2] == 'A')
+		printf("Test 3 correct\n");
+	else
+		printf("Test 3 incorrect\n");
+
+	
 
 	return (0);
 }

@@ -6,13 +6,14 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:32:17 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/13 13:30:25 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/13 14:45:10 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "libft.h"
 
 int	main(void)
@@ -575,6 +576,83 @@ int	main(void)
 		printf("Test 15 correct\n");
 	else
 		printf("Test 15 incorrect\n");
+
+	// ft_atoi
+	printf("———————————————————\n");
+	printf("Test N: ft_atoi\n");
+	printf("———————————————————\n");
+	if (ft_atoi("123") == 123)
+		printf("Test 1 correct\n");
+	else
+		printf("Test 1 incorrect\n");
+	if (ft_atoi("+123") == 123)
+		printf("Test 2 correct\n");
+	else
+		printf("Test 2 incorrect\n");
+	if (ft_atoi("-123") == -123)
+		printf("Test 3 correct\n");
+	else
+		printf("Test 3 incorrect\n");
+	if (ft_atoi("1") == 1)
+		printf("Test 4 correct\n");
+	else
+		printf("Test 4 incorrect\n");
+	if (ft_atoi(" -1") == -1)
+		printf("Test 5 correct\n");
+	else
+		printf("Test 5 incorrect\n");
+	if (ft_atoi("     -123") == -123)
+		printf("Test 6 correct\n");
+	else
+		printf("Test 6 incorrect\n");
+	if (ft_atoi(" 123") == 123)
+		printf("Test 7 correct\n");
+	else
+		printf("Test 7 incorrect\n");
+	if (ft_atoi("123g") == 123)
+		printf("Test 8 correct\n");
+	else
+		printf("Test 8 incorrect\n");
+	if (ft_atoi("d58") == 0)
+		printf("Test 9 correct\n");
+	else
+		printf("Test 9 incorrect\n");
+	if (ft_atoi("-9b8") == -9)
+		printf("Test 10 correct\n");
+	else
+		printf("Test 10 incorrect\n");
+	if (ft_atoi(" -") == 0)
+		printf("Test 11 correct\n");
+	else
+		printf("Test 11 incorrect\n");
+	if (ft_atoi("+ 1") == 0)
+		printf("Test 12 correct\n");
+	else
+		printf("Test 12 incorrect\n");
+	if (ft_atoi("2147483647") == INT_MAX)
+		printf("Test 13 correct\n");
+	else
+		printf("Test 13 incorrect\n");
+	if (ft_atoi("    -2147483648") == INT_MIN)
+		printf("Test 14 correct\n");
+	else
+		printf("Test 14 incorrect\n");
+	if (ft_atoi("0000000000000000123") == 123)
+		printf("Test 15 correct\n");
+	else
+		printf("Test 15 incorrect\n");
+	if (ft_atoi("1203") == 1203)
+		printf("Test 16 correct\n");
+	else
+		printf("Test 16 incorrect\n");
+	if (ft_atoi("-+1203") == 0)
+		printf("Test 17 correct\n");
+	else
+		printf("Test 17 incorrect\n");
+	if (ft_atoi("+12-03") == 12)
+		printf("Test 18 correct\n");
+	else
+		printf("Test 18 incorrect\n");
 
 	return (0);
 }

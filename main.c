@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:32:17 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/13 14:45:10 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/13 15:12:38 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(void)
 {
 	// ft_isalpha
 	printf("———————————————————\n");
-	printf("Test A: ft_isalpha\n");
+	printf("ft_isalpha\n");
 	printf("———————————————————\n");
 	if (ft_isalpha('a' - 1) == 0)
 		printf("Test 1 correct\n");
@@ -57,7 +57,7 @@ int	main(void)
 
 	// ft_isdigit
 	printf("———————————————————\n");
-	printf("Test B: ft_isdigit\n");
+	printf("ft_isdigit\n");
 	printf("———————————————————\n");
 	if (ft_isdigit('0' - 1) == 0)
 		printf("Test 1 correct\n");
@@ -78,7 +78,7 @@ int	main(void)
 
 	// ft_isalnum
 	printf("———————————————————\n");
-	printf("Test C: ft_isalnum\n");
+	printf("ft_isalnum\n");
 	printf("———————————————————\n");
 	if (ft_isalnum('a' - 1) == 0)
 		printf("Test 1 correct\n");
@@ -131,7 +131,7 @@ int	main(void)
 
 	// ft_isascii
 	printf("———————————————————\n");
-	printf("Test D: ft_isascii\n");
+	printf("ft_isascii\n");
 	printf("———————————————————\n");
 	if (ft_isascii(-1) == 0)
 		printf("Test 1 correct\n");
@@ -152,7 +152,7 @@ int	main(void)
 
 	//ft_isprint
 	printf("———————————————————\n");
-	printf("Test E: ft_isprint\n");
+	printf("ft_isprint\n");
 	printf("———————————————————\n");
 	if (ft_isprint(' ' - 1) == 0)
 		printf("Test 1 correct\n");
@@ -173,7 +173,7 @@ int	main(void)
 
 	// ft_strlen
 	printf("———————————————————\n");
-	printf("Test F: ft_strlen\n");
+	printf("ft_strlen\n");
 	printf("———————————————————\n");
 	if (ft_strlen("123") == 3)
 		printf("Test 1 correct\n");
@@ -186,7 +186,7 @@ int	main(void)
 
 	// ft_strlcpy
 	printf("———————————————————\n");
-	printf("Test G: ft_strlcpy\n");
+	printf("ft_strlcpy\n");
 	printf("———————————————————\n");
 	char src[] = "coucou";
 	char dest[10]; 
@@ -238,7 +238,7 @@ int	main(void)
 
 	// ft_strlcat
 	printf("———————————————————\n");
-	printf("Test H: ft_strlcat\n");
+	printf("ft_strlcat\n");
 	printf("———————————————————\n");
 	char dest2[30]; 
 	memset(dest2, 0, 30);
@@ -334,9 +334,9 @@ int	main(void)
 		printf("Test 17 incorrect\n");
 
 	// ft_tolower, ft_toupper
-	printf("———————————————————————————————\n");
-	printf("Test I: ft_tolower, ft_toupper\n");
-	printf("———————————————————————————————\n");
+	printf("——————————————————————————\n");
+	printf("ft_tolower, ft_toupper\n");
+	printf("——————————————————————————\n");
 	if (ft_tolower('A' - 1) == 'A' - 1)
 		printf("Test 1 correct\n");
 	else
@@ -372,7 +372,7 @@ int	main(void)
 
 	// ft_strchr
 	printf("———————————————————\n");
-	printf("Test J: ft_strchr\n");
+	printf("ft_strchr\n");
 	printf("———————————————————\n");
 	char	s1[] = "tripouille";
 	if (ft_strchr(s1, 't') == s1)
@@ -399,7 +399,7 @@ int	main(void)
 
 	// ft_strrchr
 	printf("———————————————————\n");
-	printf("Test K: ft_strrchr\n");
+	printf("ft_strrchr\n");
 	printf("———————————————————\n");
 	char s2[] = "tripouille";
 	char s3[] = "ltripouiel";
@@ -442,7 +442,7 @@ int	main(void)
 
 	// ft_strncmp
 	printf("———————————————————\n");
-	printf("Test L: ft_strncmp\n");
+	printf("ft_strncmp\n");
 	printf("———————————————————\n");
 	if (ft_strncmp("t", "", 0) == 0)
 		printf("Test 1 correct\n");
@@ -511,7 +511,7 @@ int	main(void)
 
 	// ft_strnstr
 	printf("———————————————————\n");
-	printf("Test M: ft_strnstr\n");
+	printf("ft_strnstr\n");
 	printf("———————————————————\n");
 	char haystack[30] = "aaabcabcd";
 	char needle[10] = "aabc";
@@ -579,7 +579,7 @@ int	main(void)
 
 	// ft_atoi
 	printf("———————————————————\n");
-	printf("Test N: ft_atoi\n");
+	printf("ft_atoi\n");
 	printf("———————————————————\n");
 	if (ft_atoi("123") == 123)
 		printf("Test 1 correct\n");
@@ -653,6 +653,26 @@ int	main(void)
 		printf("Test 18 correct\n");
 	else
 		printf("Test 18 incorrect\n");
+
+	// ft_memset
+	printf("———————————————————\n");
+	printf("ft_memset\n");
+	printf("———————————————————\n");
+	char tab[100];
+	memset(tab, 0, 100);
+	ft_memset(tab, 'A', 0);
+	if (tab[0] == 0)
+		printf("Test 1 correct\n");
+	else
+		printf("Test 1 incorrect\n");
+	ft_memset(tab, 'A', 42);
+	int i = 0;
+	while (i < 100 && tab[i] == 'A')
+		i++;
+	if (i == 42 && tab[42] == 0)
+		printf("Test 2 correct\n");
+	else
+		printf("Test 2 incorrect\n");
 
 	return (0);
 }

@@ -5,12 +5,11 @@
 #                                                     +:+ +:+         +:+      #
 #    By: plouda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/13 12:01:13 by plouda            #+#    #+#              #
-#    Updated: 2023/01/13 15:27:39 by plouda           ###   ########.fr        #
+#    Created: 2022/11/03 15:05:09 by plouda            #+#    #+#              #
+#    Updated: 2023/01/16 11:17:33 by plouda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft
 SRC = ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
@@ -30,20 +29,30 @@ SRC = ft_isalnum.c \
 		ft_bzero.c \
 		ft_memcpy.c \
 		main.c
-OBJ = $(SRC:.c=.o)
+SRCS = ${addprefix ${PRE}, ${SRC}}
+OBJS = ${SRCS:.c=.o}
+PRE = ./
+HEAD = ./
+NAME = libft.a
+AR = ar rc
+GCC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+all: ${NAME}
 
-$(NAME): $(OBJ)
-	@cc $(OBJ) $(CFLAGS) -o $(NAME) 
+.c.o:
+	${GCC} ${CFLAGS} -c -I ${HEAD} $< -o ${<:.c=.o}
+
+${NAME}:${OBJS}
+		${AR} ${NAME} ${OBJS}
 
 clean:
-	@rm -f $(OBJ)
+	rm -f ${OBJS}
 
-fclean: clean
-	@rm -f $(NAME)
+fclean:	clean
+	rm -f ${NAME}
 
-re: fclean all
+re:	fclean all
 
-.PHONY: all clean fclean re
+.PHONY:	all clean fclean re
+

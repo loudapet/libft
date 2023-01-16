@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 09:21:29 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/13 11:04:25 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/16 12:09:19 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s + ft_strlen(s));
 	while (*s != 0)
 	{
-		if (*s == c)
+		if (*s == c % 256)
 		{
 			return ((char *)s);
 		}

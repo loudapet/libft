@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:57:45 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/13 13:20:00 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/16 12:03:24 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return (0);
 	if (len == 1 && little[1] == 0)
 		return (ft_strchr(big, little[0]));
-	while (big[i] != 0 && i < len - 1)
+	while (big[i] != 0 && i <= len - ft_strlen(little))
 	{
 		if (big[i] == little[0])
 		{

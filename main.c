@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:32:17 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/13 15:58:08 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/16 12:10:58 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,8 +228,7 @@ int	main(void)
 		printf("Test 8 correct\n");
 	else
 		printf("Test 8 incorrect\n");
-	memset(dest, 'A', 10);
-	// the last test seems to be faulty (result of dest[0] cannot be 0)
+	memset(dest, 0, 10);
 	if (ft_strlcpy(dest, "1", 0) == 1 && dest[0] == 0)
 		printf("Test 9 correct\n");
 	else
@@ -392,6 +391,7 @@ int	main(void)
 	else
 		printf("Test 4 incorrect\n");
 	// shouldn't this test equal to 0?
+	// modulo 256
 	if (ft_strchr(s1, 't' + 256) == s1)
 		printf("Test 5 correct\n");
 	else
@@ -576,6 +576,10 @@ int	main(void)
 		printf("Test 15 correct\n");
 	else
 		printf("Test 15 incorrect\n");
+	if (ft_strnstr(haystack, "bc", 4) == NULL)
+		printf("Comparison test 1 correct\n");
+	else
+		printf("Comparison test 1 incorrect\n");
 
 	// ft_atoi
 	printf("———————————————————\n");

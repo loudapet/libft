@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 11:39:52 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/16 16:17:49 by plouda           ###   ########.fr       */
+/*   Created: 2023/01/16 15:31:49 by plouda            #+#    #+#             */
+/*   Updated: 2023/01/16 15:55:01 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (c >= 32 && c < 127)
-		return (1);
-	else
-		return (0);
+	void	*mem;
+
+	mem = malloc(nmemb * size);
+	if (!mem)
+		return (NULL);
+	ft_bzero(mem, nmemb * size);
+	return (mem);
 }

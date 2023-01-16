@@ -6,7 +6,7 @@
 #    By: plouda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 15:05:09 by plouda            #+#    #+#              #
-#    Updated: 2023/01/16 14:55:01 by plouda           ###   ########.fr        #
+#    Updated: 2023/01/16 16:02:37 by plouda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRC = ft_isalnum.c \
 		ft_memmove.c \
 		ft_memchr.c \
 		ft_memcmp.c \
+		ft_calloc.c \
 		main.c
 SRCS = ${addprefix ${PRE}, ${SRC}}
 OBJS = ${SRCS:.c=.o}
@@ -48,6 +49,10 @@ all: ${NAME}
 
 ${NAME}:${OBJS}
 		${AR} ${NAME} ${OBJS}
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	rm -f ${OBJS}

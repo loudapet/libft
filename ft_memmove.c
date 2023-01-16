@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:24:55 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/16 13:56:12 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/16 16:29:11 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	ndest = (unsigned char *)dest;
 	nsrc = (unsigned char *)src;
+	if (dest == 0 && src == 0)
+		return (dest);
 	if (ndest > nsrc && nsrc + n > ndest)
 	{
 		nsrc = nsrc + n;

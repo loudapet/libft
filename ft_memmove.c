@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:24:55 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/16 16:29:11 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/17 08:59:51 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		nsrc = nsrc + n;
 		ndest = ndest + n;
-		while (n > 0)
-		{
+		while (n-- > 0)
 			*--ndest = *--nsrc;
-			n--;
-		}
 	}
 	else
 	{
-		while (n > 0)
-		{
+		while (n-- > 0)
 			*ndest++ = *nsrc++;
-			n--;
-		}
 	}
 	return (dest);
 }

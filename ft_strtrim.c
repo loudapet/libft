@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:49:14 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/17 14:00:03 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/19 09:08:34 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	start;
-	int	end;
+	int		start;
+	int		end;
 	char	*str;
 
 	if (!s1 || !set)

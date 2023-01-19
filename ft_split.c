@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 09:15:33 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/19 10:58:50 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/19 11:52:56 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	**ft_split(char const *s, char c)
 			pos = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && pos >= 0)
 		{
-			split[j++] = ft_assign_block(s, pos, i);
+			split[j++] = ft_word(s, pos, i);
 			pos = -1;
 		}
 		i++;

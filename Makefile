@@ -6,7 +6,7 @@
 #    By: plouda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 15:05:09 by plouda            #+#    #+#              #
-#    Updated: 2023/01/19 13:44:16 by plouda           ###   ########.fr        #
+#    Updated: 2023/01/19 14:23:41 by plouda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ SRC = ft_isalnum.c \
 		ft_strtrim.c \
 		ft_split.c \
 		ft_itoa.c \
-		ft_strmapi.c
+		ft_strmapi.c \
+		ft_striteri.c
 		
 SRCS = ${addprefix ${PRE}, ${SRC}}
 OBJS = ${SRCS:.c=.o}

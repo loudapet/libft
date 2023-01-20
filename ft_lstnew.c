@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:37:14 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/20 12:38:13 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/20 16:26:46 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ t_list	*ft_lstnew(void *content)
 		return (NULL);
 	list->content = content;
 	list->next = NULL;
-
 	return (list);
 }

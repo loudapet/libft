@@ -6,13 +6,13 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:32:36 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/20 14:51:02 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/20 16:26:08 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*current;
 	t_list	*temp;
@@ -31,4 +31,3 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
-

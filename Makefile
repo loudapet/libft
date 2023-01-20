@@ -6,7 +6,7 @@
 #    By: plouda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 15:05:09 by plouda            #+#    #+#              #
-#    Updated: 2023/01/19 16:00:11 by plouda           ###   ########.fr        #
+#    Updated: 2023/01/20 12:00:47 by plouda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,11 +44,15 @@ SRC = ft_isalnum.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
-		
-SRCS = ${addprefix ${PRE}, ${SRC}}
+
+BONUS_SRC = ft_lstnew.c
+
+SRCS = ${addprefix ${DIR}, ${SRC}}
+BONUS_SRCS = ${addprefix ${DIR}, ${BONUS_SRC}}
 OBJS = ${SRCS:.c=.o}
-PRE = ./
-HEAD = ./
+BONUS_OBJS = ${BONUS_SRCS:.c=.o}
+DIR = ./
+
 NAME = libft.a
 AR = ar rc
 GCC = gcc
@@ -56,18 +60,21 @@ CFLAGS = -Wall -Wextra -Werror
 
 all: ${NAME}
 
-.c.o:
-	${GCC} ${CFLAGS} -c -I ${HEAD} $< -o ${<:.c=.o}
+${NAME}: ${OBJS}
+		${AR} ${NAME} $^
 
-${NAME}:${OBJS}
-		${AR} ${NAME} ${OBJS}
+bonus: ${OBJS} ${BONUS_OBJS}
+		${AR} ${NAME} $^
+
+.c.o:  $(SRCS) $(BONUS_SRCS)
+	${GCC} ${CFLAGS} -c -o $@ $<
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(GCC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) ${BONUS_SRCS}
+	gcc -nostartfiles -shared -o libft.so $(OBJS) ${BONUS_OBJS}
 
 clean:
-	rm -f ${OBJS}
+	rm -f ${OBJS} ${BONUS_OBJS}
 
 fclean:	clean
 	rm -f ${NAME}

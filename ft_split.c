@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 09:15:33 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/19 11:52:56 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/20 15:55:52 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,12 @@ static char	*ft_word(const char *s, unsigned int start, unsigned int end)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+static char **ft_fill(char **split, char const *s, char c)
 {
-	char			**split;
 	unsigned int	i;
 	unsigned int	j;
 	int				pos;
 
-	split = malloc((ft_word_count(s, c) + 1) * sizeof(char *));
-	if (!s || !split)
-		return (NULL);
 	i = 0;
 	j = 0;
 	pos = -1;
@@ -78,4 +74,16 @@ char	**ft_split(char const *s, char c)
 	}
 	split[j] = 0;
 	return (split);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char			**split;
+
+	if (!s)
+		return (NULL);
+	split = malloc((ft_word_count(s, c) + 1) * sizeof(char *));
+	if (!split)
+		return (NULL);
+	return(ft_fill(split, s, c));
 }

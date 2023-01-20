@@ -6,7 +6,7 @@
 #    By: plouda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 15:05:09 by plouda            #+#    #+#              #
-#    Updated: 2023/01/20 12:00:47 by plouda           ###   ########.fr        #
+#    Updated: 2023/01/20 12:43:05 by plouda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,9 @@ SRC = ft_isalnum.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
-BONUS_SRC = ft_lstnew.c
+BONUS_SRC = ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c
 
 SRCS = ${addprefix ${DIR}, ${SRC}}
 BONUS_SRCS = ${addprefix ${DIR}, ${BONUS_SRC}}

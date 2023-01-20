@@ -6,7 +6,7 @@
 #    By: plouda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 15:05:09 by plouda            #+#    #+#              #
-#    Updated: 2023/01/20 16:25:41 by plouda           ###   ########.fr        #
+#    Updated: 2023/01/20 16:34:57 by plouda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,10 +76,6 @@ bonus: ${OBJS} ${BONUS_OBJS}
 
 .c.o:  $(SRCS) $(BONUS_SRCS)
 	${GCC} ${CFLAGS} -c -o $@ $<
-
-so:
-	$(GCC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) ${BONUS_SRCS}
-	gcc -nostartfiles -shared -o libft.so $(OBJS) ${BONUS_OBJS}
 
 clean:
 	rm -f ${OBJS} ${BONUS_OBJS}

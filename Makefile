@@ -6,7 +6,7 @@
 #    By: plouda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 15:05:09 by plouda            #+#    #+#              #
-#    Updated: 2023/01/20 13:54:53 by plouda           ###   ########.fr        #
+#    Updated: 2023/01/20 14:33:28 by plouda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,8 @@ BONUS_SRC = ft_lstnew.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
 			ft_lstadd_back.c \
-			ft_lstdelone.c
+			ft_lstdelone.c \
+			ft_lstclear.c
 
 SRCS = ${addprefix ${DIR}, ${SRC}}
 BONUS_SRCS = ${addprefix ${DIR}, ${BONUS_SRC}}

@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:31:09 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/17 11:46:51 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/20 16:30:24 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	i;
 	unsigned int	j;
 
+	if (!s1 || !s2)
+		return (NULL);
 	total_len = ft_strlen(s1) + ft_strlen(s2);
 	join = (char *)malloc(total_len * sizeof(char) + 1);
 	if (!join)

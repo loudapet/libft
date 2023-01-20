@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 10:09:55 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/17 11:32:09 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/20 16:30:45 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*copy;
 	char			*substr;
 
+	if (!s)
+		return (NULL);
 	strlen = ft_strlen(s);
 	if (start + len < strlen)
 		copy = (char *)malloc(len * sizeof(char) + 1);

@@ -6,7 +6,7 @@
 /*   By: plouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:04:28 by plouda            #+#    #+#             */
-/*   Updated: 2023/01/20 13:49:37 by plouda           ###   ########.fr       */
+/*   Updated: 2023/01/24 11:54:20 by plouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 	else
 		last->next = new;
-	new->next = NULL;
 }

@@ -6,7 +6,7 @@
 #    By: plouda <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 15:05:09 by plouda            #+#    #+#              #
-#    Updated: 2023/01/20 16:34:57 by plouda           ###   ########.fr        #
+#    Updated: 2023/01/24 11:54:13 by plouda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ bonus: ${OBJS} ${BONUS_OBJS}
 		${AR} ${NAME} $^
 
 .c.o:  $(SRCS) $(BONUS_SRCS)
-	${GCC} ${CFLAGS} -c -o $@ $<
+	${GCC} ${CFLAGS} -c -o $@ $^
 
 clean:
 	rm -f ${OBJS} ${BONUS_OBJS}
